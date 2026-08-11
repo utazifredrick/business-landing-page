@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Premium web development, UI/UX design and digital solutions for businesses."
+    />
+    <title>TechWave — Web Development & Digital Solutions</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader" aria-hidden="false">
+      <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+
+    <header class="site-header" id="header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a href="#home" class="logo">Tech<span class="accent">Wave</span></a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="btn btn-ghost" aria-pressed="false">
+            🌙
+          </button>
+          <a class="btn btn-primary" href="#contact">Get Started</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="home" class="hero container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            We build digital products that grow businesses.
+          </h1>
+          <p class="hero-desc">
+            Premium web development, UI/UX design and ongoing digital solutions
+            tailored for ambitious teams.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">Get Started</a>
+            <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+          </div>
+          <div class="trusted-by" aria-hidden="true">
+            <span>Trusted by</span>
+            <div class="logos">
+              <img
+                src="https://picsum.photos/seed/1/80/40"
+                alt="Client logo 1"
+              />
+              <img
+                src="https://picsum.photos/seed/2/80/40"
+                alt="Client logo 2"
+              />
+              <img
+                src="https://picsum.photos/seed/3/80/40"
+                alt="Client logo 3"
+              />
+              <img
+                src="https://picsum.photos/seed/4/80/40"
+                alt="Client logo 4"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="media-card glass">
+            <img
+              src="https://picsum.photos/seed/hero/800/520"
+              alt="Hero illustration"
+            />
+          </div>
+          <div class="animated-shapes" aria-hidden="true">
+            <span class="shape s1"></span>
+            <span class="shape s2"></span>
+            <span class="shape s3"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="section container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">
+          End-to-end digital services for product-led growth.
+        </p>
+        <div class="grid services-grid">
+          <!-- Service card template -->
+          <article class="card service" data-animate>
+            <div class="icon">💻</div>
+            <h3>Website Development</h3>
+            <p>
+              Custom web apps and corporate websites built with performance and
+              scalability in mind.
+            </p>
+          </article>
+          <article class="card service" data-animate>
+            <div class="icon">⚡</div>
+            <h3>Landing Pages</h3>
+            <p>
+              High-converting landing pages optimized for growth and
+              performance.
+            </p>
+          </article>
+          <article class="card service" data-animate>
+            <div class="icon">🛒</div>
+            <h3>E-commerce Websites</h3>
+            <p>
+              Robust e-commerce solutions to scale sales and manage catalogs
+              efficiently.
+            </p>
+          </article>
+          <article class="card service" data-animate>
+            <div class="icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>
+              User-centered design and prototypes to accelerate product-market
+              fit.
+            </p>
+          </article>
+          <article class="card service" data-animate>
+            <div class="icon">🛠️</div>
+            <h3>Website Maintenance</h3>
+            <p>
+              Ongoing updates, backups and optimizations to keep sites healthy.
+            </p>
+          </article>
+          <article class="card service" data-animate>
+            <div class="icon">🔎</div>
+            <h3>SEO Optimization</h3>
+            <p>
+              Technical and content SEO improvements to boost organic
+              visibility.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section container about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-grid">
+          <div class="about-text" data-animate>
+            <p class="lead">
+              TechWave is a technology partner for companies building modern web
+              experiences. We combine engineering excellence with design
+              thinking to deliver measurable results.
+            </p>
+            <div class="mv">
+              <div>
+                <h4>Mission</h4>
+                <p>
+                  Enable businesses to deliver engaging digital experiences that
+                  drive growth.
+                </p>
+              </div>
+              <div>
+                <h4>Vision</h4>
+                <p>
+                  Be the trusted partner for product teams building the next
+                  generation of web apps.
+                </p>
+              </div>
+            </div>
+          </div>
+          <aside class="stats" data-animate>
+            <div class="stat"><strong>100+</strong><span>Projects</span></div>
+            <div class="stat"><strong>50+</strong><span>Clients</span></div>
+            <div class="stat"><strong>5+</strong><span>Years</span></div>
+            <div class="stat">
+              <strong>98%</strong><span>Satisfaction</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section id="portfolio" class="section container">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-sub">Selected projects across industries.</p>
+        <div class="grid portfolio-grid">
+          <!-- Project card -->
+          <article class="card project" data-animate>
+            <img src="https://picsum.photos/seed/p1/600/360" alt="Project 1" />
+            <div class="card-body">
+              <h3>Project Alpha</h3>
+              <p class="category">E-commerce</p>
+              <a href="#" class="btn btn-outline small">View Project</a>
+            </div>
+          </article>
+          <article class="card project" data-animate>
+            <img src="https://picsum.photos/seed/p2/600/360" alt="Project 2" />
+            <div class="card-body">
+              <h3>Brand Refresh</h3>
+              <p class="category">UI/UX</p>
+              <a href="#" class="btn btn-outline small">View Project</a>
+            </div>
+          </article>
+          <article class="card project" data-animate>
+            <img src="https://picsum.photos/seed/p3/600/360" alt="Project 3" />
+            <div class="card-body">
+              <h3>Marketplace</h3>
+              <p class="category">Marketplace</p>
+              <a href="#" class="btn btn-outline small">View Project</a>
+            </div>
+          </article>
+          <article class="card project" data-animate>
+            <img src="https://picsum.photos/seed/p4/600/360" alt="Project 4" />
+            <div class="card-body">
+              <h3>Analytics Dashboard</h3>
+              <p class="category">Web App</p>
+              <a href="#" class="btn btn-outline small">View Project</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section id="why" class="section container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="grid why-grid">
+          <div class="card feature" data-animate>
+            <div class="icon">⚡</div>
+            <h4>Fast Delivery</h4>
+          </div>
+          <div class="card feature" data-animate>
+            <div class="icon">🎨</div>
+            <h4>Modern Design</h4>
+          </div>
+          <div class="card feature" data-animate>
+            <div class="icon">📱</div>
+            <h4>Mobile Responsive</h4>
+          </div>
+          <div class="card feature" data-animate>
+            <div class="icon">🔎</div>
+            <h4>SEO Friendly</h4>
+          </div>
+          <div class="card feature" data-animate>
+            <div class="icon">🔒</div>
+            <h4>Secure Websites</h4>
+          </div>
+          <div class="card feature" data-animate>
+            <div class="icon">🔁</div>
+            <h4>Ongoing Support</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="section container">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="grid testimonials">
+          <article class="card testimonial" data-animate>
+            <div class="meta">
+              <img src="https://picsum.photos/seed/t1/80/80" alt="Client 1" />
+              <div><strong>Jane Doe</strong><span>CEO, Acme Co</span></div>
+            </div>
+            <p>
+              TechWave helped us double conversions with a redesigned funnel.
+              The team was responsive and professional.
+            </p>
+            <div class="rating">★★★★★</div>
+          </article>
+          <article class="card testimonial" data-animate>
+            <div class="meta">
+              <img src="https://picsum.photos/seed/t2/80/80" alt="Client 2" />
+              <div>
+                <strong>John Smith</strong><span>Founder, Startly</span>
+              </div>
+            </div>
+            <p>
+              Excellent delivery and support. Our site is faster and easier to
+              manage.
+            </p>
+            <div class="rating">★★★★★</div>
+          </article>
+          <article class="card testimonial" data-animate>
+            <div class="meta">
+              <img src="https://picsum.photos/seed/t3/80/80" alt="Client 3" />
+              <div><strong>Mary Lee</strong><span>CMO, RetailCo</span></div>
+            </div>
+            <p>
+              Design quality and attention to detail were outstanding. Highly
+              recommend.
+            </p>
+            <div class="rating">★★★★★</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="section container">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-sub">
+          Simple, transparent pricing for teams of all sizes.
+        </p>
+        <div class="grid pricing-grid">
+          <article class="card price" data-animate>
+            <h3>Starter</h3>
+            <div class="price-amt">$49<span>/mo</span></div>
+            <ul>
+              <li>Basic website</li>
+              <li>5 pages</li>
+              <li>Email support</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Choose</a>
+          </article>
+          <article class="card price featured" data-animate>
+            <h3>Professional</h3>
+            <div class="price-amt">$149<span>/mo</span></div>
+            <ul>
+              <li>Custom website</li>
+              <li>Unlimited pages</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Choose</a>
+          </article>
+          <article class="card price" data-animate>
+            <h3>Enterprise</h3>
+            <div class="price-amt">Contact</div>
+            <ul>
+              <li>Advanced integrations</li>
+              <li>SLAs & support</li>
+              <li>Custom pricing</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Contact Sales</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="accordion" id="faq-acc">
+          <details open>
+            <summary>How long does a website project take?</summary>
+            <p>
+              Project timelines vary by scope, typically 4–12 weeks for most
+              sites.
+            </p>
+          </details>
+          <details>
+            <summary>Do you provide ongoing maintenance?</summary>
+            <p>
+              Yes — we offer maintenance plans for updates, backups and
+              security.
+            </p>
+          </details>
+          <details>
+            <summary>Can you redesign an existing site?</summary>
+            <p>
+              Absolutely — we handle migrations, redesigns and performance
+              improvements.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section container contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <form id="contact-form" class="card contact-form" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" required minlength="2" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div id="form-msg" aria-live="polite"></div>
+          </form>
+
+          <aside class="card contact-info" data-animate>
+            <h3>Get in touch</h3>
+            <p>
+              Email: <a href="mailto:hello@techwave.com">hello@techwave.com</a>
+            </p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p>Address: 123 Tech Street, Suite 400, City</p>
+            <div class="map-placeholder">Google Maps Placeholder</div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Back to top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo">Tech<span class="accent">Wave</span></a>
+          <p>Building premium web products for ambitious teams.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li>Website Development</li>
+            <li>UI/UX Design</li>
+            <li>SEO Optimization</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <p>Get product updates and resources.</p>
+          <form id="newsletter">
+            <input
+              type="email"
+              placeholder="Email"
+              aria-label="Email"
+              required
+            />
+            <button class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="container copyright">
+        © <span id="year"></span> TechWave. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
