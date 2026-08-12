@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prefersDark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = storedTheme || (prefersDark ? "dark" : "dark");
+  const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
   document.documentElement.setAttribute("data-theme", initialTheme);
   themeToggle.setAttribute("aria-pressed", initialTheme === "dark");
   themeToggle.textContent = initialTheme === "dark" ? "🌙" : "☀️";
@@ -67,11 +67,36 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   document.querySelectorAll("[data-animate]").forEach((el) => io.observe(el));
 
-  // Back to top
-  window.addEventListener("scroll", () => {
+  const pageHeader = document.getElementById("header");
+  const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+
+  const setActiveNav = () => {
+    const scrollPosition =
+      window.scrollY + (pageHeader?.offsetHeight || 80) + 100;
+    let activeSectionId = sections[0]?.id;
+    for (const section of sections) {
+      if (section.offsetTop <= scrollPosition) {
+        activeSectionId = section.id;
+      }
+    }
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      link.classList.toggle("active", href === `#${activeSectionId}`);
+    });
+  };
+
+  const updateScrollState = () => {
+    const isScrolled = window.scrollY > 24;
+    if (pageHeader) pageHeader.classList.toggle("scrolled", isScrolled);
     if (window.scrollY > 400) backToTop.style.display = "flex";
     else backToTop.style.display = "none";
-  });
+    setActiveNav();
+  };
+
+  window.addEventListener("scroll", updateScrollState);
+  updateScrollState();
+
   backToTop.addEventListener("click", () =>
     window.scrollTo({ top: 0, behavior: "smooth" }),
   );
