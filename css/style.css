@@ -159,7 +159,7 @@ body {
   gap: 0.5rem;
   padding: 0.6rem 1rem;
   border-radius: 999px;
-  border: 1px solid.transparent;
+  border: 1px solid transparent;
   text-decoration: none;
   cursor: pointer;
 }
