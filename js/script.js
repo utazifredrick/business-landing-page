@@ -101,28 +101,53 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" }),
   );
 
-  // Contact form validation
+  // Contact form validation and Formspree submission
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const form = e.target;
       const msg = document.getElementById("form-msg");
+      const submitBtn = form.querySelector('button[type="submit"]');
+
       if (!form.checkValidity()) {
         msg.textContent = "Please fill out all fields correctly.";
         msg.style.color = "tomato";
         return;
       }
-      // Simulate sending
-      const submitBtn = form.querySelector('button[type="submit"]');
+
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
-      setTimeout(() => {
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          msg.style.color = "lightgreen";
+          msg.textContent = "Thanks! Your message has been sent.";
+          form.reset();
+        } else {
+          const data = await response.json().catch(() => ({}));
+          const errorMessage =
+            data?.error ||
+            "Something went wrong. Please try again or email us directly.";
+
+          msg.style.color = "tomato";
+          msg.textContent = errorMessage;
+        }
+      } catch (error) {
+        msg.style.color = "tomato";
+        msg.textContent = "Something went wrong. Please try again later.";
+      } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Send Message";
-        msg.style.color = "lightgreen";
-        msg.textContent = "Thanks! Your message has been sent.";
-        form.reset();
-      }, 900);
+      }
     });
   }
 
